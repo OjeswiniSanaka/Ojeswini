@@ -1,0 +1,17 @@
+types : begin of ty_tab,
+        vbeln type vbak-vbeln,
+        erdat type vbak-erdat,
+        auart type vbak-auart,
+        vkorg type vbak-vkorg,
+        vtweg type vbak-vtweg,
+        end of ty_tab.
+data : lt_vbak type table of ty_tab,
+       ls_vbak type ty_tab.
+select vbeln,
+       erdat,
+       auart,
+       vkorg,
+       vtweg
+from vbak
+up to 10 rows
+into table @lt_vbak.
